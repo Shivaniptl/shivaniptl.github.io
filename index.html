@@ -97,6 +97,7 @@
     <script>
         window.onload = function() {
       	    var currentUrl = window.location.href;
+            currentUrl = currentUrl.replace("ref=producthunt", "");
             var queryParamIndex = currentUrl.indexOf("?");
             var diff = currentUrl.length - queryParamIndex;
             if(queryParamIndex > 0 && diff > 1) {
