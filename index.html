@@ -11,11 +11,14 @@
     <body>
 
         <script>
+            $(".redirectingContainer").hide();
       		window.onload = function() {
-      			var currentUrl = window.location.href;
+      		var currentUrl = window.location.href;
             var queryParamIndex = currentUrl.indexOf("?");
             var diff = currentUrl.length - queryParamIndex;
             if(queryParamIndex > 0 && diff > 1) {
+              $(".container").hide();
+              $(".redirectingContainer").show();
               // Redirect to Heroku App
               var newUrl = currentUrl.replace("shivaniptl.github.io", "dontrefme.herokuapp.com");
         			newUrl = newUrl.replace("dontref.me", "dontrefme.herokuapp.com");
@@ -27,6 +30,11 @@
             }
       		}
       	</script>
+        <center class="redirectingContainer">
+            <br><br><br><br>
+	        <div class="loader"></div>
+	        <h3>Removing references and redirecting..</h3>
+        </center>
         <div class="container">
             <div class="row"><h1>Don't Ref me !!</h1></div>
             <div class="row">
