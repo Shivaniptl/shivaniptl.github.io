@@ -1,18 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting to dontrefme...</title>
-   
-    <script>
-		window.onload = function() {
-			var currentUrl = window.location.href;
-			var newUrl = currentUrl.replace("shivaniptl.github.io", "dontrefme.herokuapp.com");
-			newUrl = newUrl.replace("dontref.me", "dontrefme.herokuapp.com");
-			window.location.assign(newUrl);			
-		}
-	</script>
-  </head>
-  <body>
-  </body>
+<html>
+    <head>
+        <title>dontref.me - remove ref data from your link</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link type="text/css" rel="stylesheet" href=/assets/css/index.css media="screen,projection"/>
+    </head>
+    <body>
+
+        <script>
+      		window.onload = function() {
+      			var currentUrl = window.location.href;
+            var queryParamIndex = currentUrl.indexOf("?");
+            var diff = currentUrl.length - queryParamIndex;
+            if(queryParamIndex > 0 && diff > 1) {
+              // Redirect to Heroku App
+              var newUrl = currentUrl.replace("shivaniptl.github.io", "dontrefme.herokuapp.com");
+        			newUrl = newUrl.replace("dontref.me", "dontrefme.herokuapp.com");
+        			window.location.assign(newUrl);
+            } else {
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', "http://dontrefme.herokuapp.com", false);
+              xhr.send();
+            }
+      		}
+      	</script>
+        <div class="container">
+            <div class="row"><h1>Don't Ref me !!</h1></div>
+            <div class="row">
+                <div class="col-sm-4" >
+                    <div class=".padding-x-xs form-group">
+                        <p>Paste your link here: <br/></p>
+                        <form method="post" action="http://dontrefme.herokuapp.com">
+                            <input type="text" class="form-control" name="requestLink" placeholder="Enter Url" >
+                            <input class="btn btn-info" type="submit" value="Hide My Reffff">
+                        </form>
+                    </div>
+
+
+                     <div class="row">
+                        <h6>
+                            <h5><u>So far..</u></h5>
+                            <b>
+                                92
+                            </b> links converted <br/>
+                            <b>
+                                296
+                            </b> references removed <br/>
+                        </h6>
+                    </div>
+
+                </div>
+                <div class="col-sm-7" >
+
+                    <p>Ever wondered why the URLs are longer than required?
+                        <br/>URLs can be confusing. Sometimes they are super short and other times they are three lines long. So, what exactly is all that stuff in between? Is it safe to forward that URL or it carries your information along with it?
+                        URLs can be confusing!!
+                    </p>
+                    <h5>Anatomy of URL:	</h5>
+                    <p>URL stands for Uniform Resource Locator, or in other words, the web address of an online resource, i.e. a web site or document.
+                        <br/><br/>
+                        In order to better understand this, let's take an example of Amazon. When you go to <a href="https://www.amazon.com/">Amazon.com</a>
+                        and type in a search term like “Shoes” and select a product, you’ll get the following resulting Amazon link: <br/>
+                        <a href="https://www.amazon.com/NIKE-Revolution-Running-Black-Cool-Regular/dp/B06XKL3DBZ/ref=sr_1_4?keywords=shoes&qid=1560048374&s=gateway&sr=8-4">
+                            https://www.amazon.com/NIKE-Revolution-Running-Black-Cool-Regular/dp/B06XKL3DBZ/ref=sr_1_4?keywords=shoes&qid=1560048374&s=gateway&sr=8-4</a><br/><br/>
+                        Like our search query, this link shows the keywords we used to find the product.  It’s fun to look at what other people typed to find their product when they
+                        send this long link. Notice the parameter "qid" - it changes when the same search is performed using different account or different IP address.
+                        Therefore, as you can see, using a full-width URL on a search will leave a trail that goes back to you! And these full length URLs are used by many companies to add information
+                        that leads to you.
+                        <h6>Let's try to avoid that!</h6>
+                        Simply paste your Url here or add <a href="#">dontref.me/?</a> before the url and we will remove all references from it. <br/>
+                        Example: Call <a href="http://dontref.me/?https://www.amazon.com/NIKE-Revolution-Running-Black-Cool-Regular/dp/B06XKL3DBZ/ref=sr_1_4?keywords=shoes&qid=1560048374&s=gateway&sr=8-4" target="_blank" >dontref.me/?https://www.amazon.com/NIKE-Revolution-Running-Black-Cool-Regular/dp/B06XKL3DBZ/ref=sr_1_4?keywords=shoes&qid=1560048374&s=gateway&sr=8-4</a> and get url without any references: <a href="https://www.amazon.com/NIKE-Revolution-Running-Black-Cool-Regular/dp/B06XKL3DBZ/" target="_blank" >https://www.amazon.com/NIKE-Revolution-Running-Black-Cool-Regular/dp/B06XKL3DBZ/</a>
+                    </p>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row">
+                <hr>
+                <h7>Created by <a href="https://www.producthunt.com/@rishijash" target="_blank">Rushi</a> & <a href="https://www.producthunt.com/@shivani_23" target="_blank">Shivani</a> while trying to respect Privacy one step at a time. :)</h7>
+                We are open source. Help us improve: <a href="http://github.com/rishijash/dontrefme" target="_blank">http://github.com/rishijash/dontrefme</a>
+            </div>
+        </div>
+    </body>
 </html>
