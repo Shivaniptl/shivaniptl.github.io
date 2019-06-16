@@ -7,6 +7,26 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link type="text/css" rel="stylesheet" href=/assets/css/index.css media="screen,projection"/>
+	<style>
+	.loader {
+  		border: 16px solid #f3f3f3;
+  		border-radius: 50%;
+  		border-top: 16px solid #3498db;
+  		width: 120px;
+  		height: 120px;
+  		-webkit-animation: spin 2s linear infinite; /* Safari */
+  		animation: spin 2s linear infinite;
+	}
+	/* Safari */
+	@-webkit-keyframes spin {
+  		0% { -webkit-transform: rotate(0deg); }
+  		100% { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+  		0% { transform: rotate(0deg); }
+  		100% { transform: rotate(360deg); }
+	}
+    	</style>
     </head>
     <body>
 
@@ -30,11 +50,13 @@
             }
       		}
       	</script>
-        <center class="redirectingContainer">
+        <div class="redirectingContainer">
             <br><br><br><br>
-	        <div class="loader"></div>
-	        <h3>Removing references and redirecting..</h3>
-        </center>
+	        <center>
+			<div class="loader"></div>
+	        	<h3>Removing references and redirecting..</h3>
+		</center>
+        </div>
         <div class="container">
             <div class="row"><h1>Don't Ref me !!</h1></div>
             <div class="row">
