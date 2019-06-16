@@ -108,6 +108,7 @@
         			window.location.assign(newUrl);
             } else {
               $('.container').show();
+              history.pushState({}, null, currentUrl);
       		  }
           }
     </script>
